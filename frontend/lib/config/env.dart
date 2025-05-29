@@ -1,3 +1,3 @@
 class Env {
-  static const apiUrl = String.fromEnvironment('apiUrl', defaultValue: 'http://localhost:3000');
+  static const apiUrl = String.fromEnvironment('gamestore-production-23be.up.railway.app');
 }
