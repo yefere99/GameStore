@@ -23,7 +23,7 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/upload', uploadRoutes);
 
 // Conexión a MongoDB (el nombre 'mongo' es el del contenedor, NO lo cambies)
-mongoose.connect('mongodb://mongo:27017/gamestore')
+mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log('✅ Conectado a MongoDB'))
   .catch(err => console.error('❌ Error conectando a MongoDB:', err));
 
