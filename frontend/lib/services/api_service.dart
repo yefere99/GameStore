@@ -27,7 +27,7 @@ class ApiService {
   /// Obtener categorías desde el backend
   static Future<List<String>> fetchCategories() async {
     try {
-      final response = await http.get(Uri.parse('$baseUrl/categories'));
+      final response = await http.get(Uri.parse('$baseUrl/api/categories'));
       if (response.statusCode == 200) {
         final List data = json.decode(response.body);
         return data.map((e) => e.toString()).toList();
