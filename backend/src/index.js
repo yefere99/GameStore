@@ -6,6 +6,7 @@ const path = require('path');
 const productRoutes = require('./routes/products');
 const orderRoutes = require('./routes/orders');
 const uploadRoutes = require('./routes/upload');
+const categoriesRoutes = require('./routes/categories')
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use('/uploads', express.static('uploads'));
 app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/upload', uploadRoutes);
+app.use('/api/categories', categoriesRoutes);
 
 // Conexión a MongoDB (el nombre 'mongo' es el del contenedor, NO lo cambies)
 mongoose.connect(process.env.MONGO_URL)
