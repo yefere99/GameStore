@@ -15,8 +15,6 @@ COPY . .
 
 RUN flutter pub get
 
-# Usa ARG para pasar la variable apiUrl
-ARG apiUrl
 RUN flutter build web --release --dart-define=apiUrl=$apiUrl
 
 # Usa nginx para servir la app
