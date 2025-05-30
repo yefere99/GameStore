@@ -44,7 +44,7 @@ class ApiService {
   static Future<void> addProduct(Product product) async {
     try {
       final response = await http.post(
-        Uri.parse(baseUrl),
+        Uri.parse('$baseUrl'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode(product.toJson()),
       );
