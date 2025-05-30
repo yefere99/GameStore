@@ -16,8 +16,11 @@ const upload = multer({ storage });
 // Subir imagen
 router.post('/upload', upload.single('image'), (req, res) => {
   if (!req.file) return res.status(400).json({ error: 'No se subió archivo' });
-  const url = `http://localhost:3000/uploads/${req.file.filename}`;
-  res.status(200).json({ imageUrl: url });
+  // products.js (backend)
+const backendHost = process.env.BACKEND_HOST || "http://localhost:3000";
+const url = `${backendHost}/uploads/${req.file.filename}`;
+res.status(200).json({ imageUrl: url });
+
 });
 
 // Categorías válidas (para el formulario)
