@@ -13,7 +13,7 @@ class ApiService {
   /// Obtener todos los productos
   static Future<List<Product>> fetchProducts() async {
     try {
-      final response = await http.get(Uri.parse(baseUrl));
+      final response = await http.get(Uri.parse('$baseUrl'));
       if (response.statusCode == 200) {
         final List data = json.decode(response.body);
         return data.map((e) => Product.fromJson(e)).toList();
