@@ -1,5 +1,4 @@
-# 1. Build stage (usa imagen de Flutter oficial)
-FROM cirrusci/flutter:stable AS build
+FROM cirrusci/flutter:3.22.0 AS build
 
 WORKDIR /app
 COPY . .
