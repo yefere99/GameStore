@@ -7,7 +7,7 @@ import '../models/product.dart';
 import 'package:gamestore_frontend/config/env.dart';
 
 class ApiService {
-    final response = await http.get(Uri.parse('$baseUrl/api/products/categories'));
+    final response = await http.get(Uri.parse('$baseUrl'));
 
 
   /// Obtener todos los productos
@@ -28,7 +28,7 @@ class ApiService {
   /// Obtener categorías desde el backend
   static Future<List<String>> fetchCategories() async {
     try {
-      final response = await http.get(Uri.parse('$baseUrl/api/categories'));
+      final response = await http.get(Uri.parse('$baseUrl/api/products/categories'));
       if (response.statusCode == 200) {
         final List data = json.decode(response.body);
         return data.map((e) => e.toString()).toList();
