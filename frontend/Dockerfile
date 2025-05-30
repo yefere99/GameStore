@@ -1,4 +1,5 @@
-FROM cirrusci/flutter:latest AS build
+FROM ghcr.io/flutter/flutter:3.22.0 AS build
+
 
 WORKDIR /app
 COPY . .
