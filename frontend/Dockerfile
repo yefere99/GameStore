@@ -1,5 +1,5 @@
-# Usa imagen oficial de Flutter
-FROM cirrusci/flutter:stable AS build
+
+FROM ghcr.io/cirruslabs/flutter:3.19.6 AS build-stage
 
 WORKDIR /app
 COPY . .
